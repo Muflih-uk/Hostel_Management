@@ -122,15 +122,15 @@ class _MealPlannerDashboardState extends State<MealPlannerDashboard> {
               // Today's Menu
               DashboardWidgets.todayMenu(context),
 
-              // Bottom bar
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Nav(context,1,widget.controller),
-              )
             ],
           ),
         ),
       ),
+          // Bottom Bar
+          bottomNavigationBar: Padding(
+            padding: const EdgeInsets.all(20.0),
+              child: Nav(context, 1, widget.controller),
+              )
     );
   }
 }

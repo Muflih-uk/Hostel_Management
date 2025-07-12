@@ -1,5 +1,5 @@
 // Colors
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ColorTheme {
   static Color appMain = Color(0xFFFFFFFF);

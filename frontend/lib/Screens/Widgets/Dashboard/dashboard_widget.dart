@@ -101,58 +101,115 @@ class DashboardWidgets {
   static Center mealSelection(BuildContext build){
       
     return Center(
-      child: Column(
-      spacing: 12,
-      children: [
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal:40, vertical: 16),
+        child: Column(
+          children: [
         Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 30,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            // SvgPicture.asset(
-            //   'assets/images/breakfast-icon.svg',
-            //   semanticsLabel: 'breakfast image',
-            // ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child:
+              Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/images/Breakfast.png'),
+              SizedBox(width: 20,),
               Text('Breakfast'),
-              ToggleFoodButton(
-                initialValue: MealModel.mealStatus['breakfast']!,
+            ],
+              )
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ToggleFoodButton(
+              initialValue: MealModel.mealStatus['breakfast']!,
+              ),
               ),
             ],
           ),
         ),
+        SizedBox(height: 12),
         Center(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 45,
-              children: [
-                Text('   Lunch'),
-                ToggleFoodButton(initialValue: MealModel.mealStatus['lunch']!),
-              ],
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child:
+              Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/images/Lunch.png'),
+              SizedBox(width: 20,),
+              Text('Lunch'),
+            ],
+              )
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ToggleFoodButton(
+              initialValue: MealModel.mealStatus['lunch']!,
+              ),
+              ),
+            ],
           ),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 25,
-              children: [
-                Text('Tea/Snacks'),
-                ToggleFoodButton(
-                  initialValue: MealModel.mealStatus['teaSnacks']!,
-                ),
-              ],
+        ),
+        SizedBox(height: 12),
+        Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child:
+              Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/images/Tea.png'),
+              SizedBox(width: 20,),
+              Text('Tea/Snacks'),
+            ],
+              )
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ToggleFoodButton(
+              initialValue: MealModel.mealStatus['teaSnacks']!,
+              ),
+              ),
+            ],
           ),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 45,
-              children: [
-                Text('     Dinner'),
-                ToggleFoodButton(initialValue: MealModel.mealStatus['dinner']!),
-              ],
+        ),
+        SizedBox(height: 12),
+        Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child:
+              Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image.asset('assets/images/Dinner.png'),
+              SizedBox(width: 20,),
+              Text('Dinner'),
+            ],
+              )
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: ToggleFoodButton(
+              initialValue: MealModel.mealStatus['dinner']!,
+              ),
+              ),
+          ],
           ),
-        ],
+        ),
+          ],
+        ),
       ),
     );
   }
@@ -177,10 +234,46 @@ class DashboardWidgets {
       child: GridView.count(
         crossAxisCount: 2,
         children: [
-          Center(child: Text('Breakfast')),
-          Center(child: Text('Lunch')),
-          Center(child: Text('Tea/Snack')),
-          Center(child: Text('Breakfast')),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/Breakfast.png'),
+                SizedBox(width: 10,),
+                Text('Breakfast'),
+                ]
+              )
+            ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/Lunch.png'),
+                SizedBox(width: 10,),
+                Text('Lunch'),
+                ]
+              )
+            ),          
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/Tea.png'),
+                SizedBox(width: 10,),
+                Text('Tea/Snacks'),
+                ]
+              )
+            ),
+          Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/images/Dinner.png'),
+                SizedBox(width: 10,),
+                Text('Dinner'),
+                ]
+              )
+            ),
         ],
       ),
     );

@@ -6,8 +6,11 @@ import 'package:frontend/Controller/attendance.dart';
 // Widgets
 import 'package:frontend/Screens/Widgets/ViewState/view_state_widgets.dart';
 
-// COmponents
+// Components
 import 'package:frontend/Components/bottom_nav.dart';
+
+//Constants
+import 'package:frontend/Constants/colors.dart';
 
 class ViewState extends StatefulWidget {
   final AttendanceController controller;
@@ -68,16 +71,24 @@ class _ViewSate extends State<ViewState> {
                 image: 'assets/images/Dinner.png'
               ),
               SizedBox(height: 20,),
-              Calendar.customCalendarWidget(context: context),
-              // Bottom bar
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Nav(context,1,widget.controller),
-              )
+              Container(
+                decoration: BoxDecoration(
+                  color: ColorTheme.appSecondary,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsets.all(10),
+                child: Calendar.customCalendarWidget(context: context),
+              ),
+
             ],
           ),
         ),
       ),
+          // Bottom Bar
+          bottomNavigationBar: Padding(
+            padding: const EdgeInsets.all(20.0),
+              child: Nav(context, 1, widget.controller),
+          )
     );
   }
 }

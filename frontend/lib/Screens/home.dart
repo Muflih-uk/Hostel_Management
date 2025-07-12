@@ -7,6 +7,9 @@ import 'package:frontend/Screens/Widgets/Home/home_widgets.dart';
 // Controller
 import 'package:frontend/Controller/attendance.dart';
 
+//Component
+import 'package:frontend/Components/bottom_nav.dart';
+
 class Home extends StatefulWidget {
   final AttendanceController controller;
   Home(this.controller);
@@ -54,6 +57,11 @@ class HomeState extends State<Home> {
           )
         ) 
       ),
+              // Bottom Bar
+              bottomNavigationBar: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Nav(context, 0, widget.controller),
+              )
     );
   }
 }

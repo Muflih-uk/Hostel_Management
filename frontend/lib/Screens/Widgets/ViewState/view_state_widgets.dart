@@ -67,22 +67,42 @@ class ViewStateWidgets {
   }
 
   // Meal Summary
-  static Row mealSummary({
+  static Padding mealSummary({
     required String image,
     required String meal,
     required int filledCount
   }) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(image),
-        SizedBox(width: 20,),
-        Text(meal),
-        SizedBox(width: 20,),
-        RectangleBar(filledCount: filledCount),
-        SizedBox(width: 20,),
-        Text('$filledCount/31')
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 30),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset(image),
+                SizedBox(width: 20,),
+                Text(meal),
+              ],
+            ),
+          ),
+
+            Align(
+              alignment: Alignment.centerRight,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SizedBox(width: 20),
+                  RectangleBar(filledCount: filledCount),
+                  SizedBox(width: 20),
+                  Text('$filledCount/31')
+                ],
+              )
+            ),
+        ],
+      ),
     );
   }
 
